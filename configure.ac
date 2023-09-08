@@ -129,7 +129,6 @@ open \
 openlog \
 pclose \
 popen \
-pthread_cancel \
 pthread_cond_init \
 pthread_cond_signal \
 pthread_cond_wait \
