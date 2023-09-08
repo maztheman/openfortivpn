@@ -116,6 +116,15 @@ static void destroy_ssl_locks(void)
 }
 #endif
 
+#if defined(__ANDROID__)
+
+inline static
+int pthread_cancel(pthread_t h) {
+	return pthread_kill(h, 0);
+}
+
+#endif
+
 // global variable to pass signal out of its handler
 volatile sig_atomic_t sig_received; //static variables are initialized to zero in C99
 
